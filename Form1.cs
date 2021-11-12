@@ -11,6 +11,9 @@ namespace JCNotes
             InitializeComponent();
         }
 
+        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HT_CAPTION = 0x2;
+
         [DllImport("user32")]
         private static extern bool ReleaseCapture();
 
@@ -23,7 +26,7 @@ namespace JCNotes
             if (e.Button == MouseButtons.Left)
             {
                 ReleaseCapture(); // Release cursor capture
-                SendMessage(Handle, 161, 2, 0); // Redirect left mouse button down message from client area to caption area
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0); // Redirect left mouse button down message from client area to caption area
             }
         }
 
