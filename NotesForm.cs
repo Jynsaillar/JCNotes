@@ -1,14 +1,33 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using System.Linq;
 
 namespace JCNotes
 {
-    public partial class Form1 : Form
+    public partial class NotesForm : Form
     {
-        public Form1()
+        public NotesForm()
         {
             InitializeComponent();
+            SetCustomFont(ref richTextBoxNotes);
+        }
+
+        private void SetCustomFont(ref RichTextBox richTextBoxNotes)
+        {
+            // TI-83 Plus Large font:
+            // https://www.dafont.com/ti-83-plus-large.font
+            using (var installedFonts = new System.Drawing.Text.InstalledFontCollection())
+            {
+                var fontHashset = installedFonts.Families.ToHashSet(); // Hashset for fast lookup
+                // Checks if the font 'TI-83 Plus Large' is installed
+                if (fontHashset.FirstOrDefault(
+                    installedFont => String.Equals(installedFont.Name, "TI-83 Plus Large", StringComparison.InvariantCultureIgnoreCase))
+                    is System.Drawing.FontFamily ti83Font)
+                {
+                    richTextBoxNotes.Font = new System.Drawing.Font(ti83Font.Name, 9);
+                }
+            }
         }
 
         public const int WM_NCLBUTTONDOWN = 0xA1;

@@ -1,7 +1,7 @@
 ﻿
 namespace JCNotes
 {
-    partial class Form1
+    partial class NotesForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -29,7 +29,7 @@ namespace JCNotes
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NotesForm));
             this.richTextBoxNotes = new System.Windows.Forms.RichTextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItemCloseForm = new System.Windows.Forms.ToolStripMenuItem();
@@ -40,7 +40,6 @@ namespace JCNotes
             // 
             this.richTextBoxNotes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.richTextBoxNotes.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBoxNotes.Font = new System.Drawing.Font("TI-83 Plus Large", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.richTextBoxNotes.Location = new System.Drawing.Point(0, 24);
             this.richTextBoxNotes.Name = "richTextBoxNotes";
             this.richTextBoxNotes.Size = new System.Drawing.Size(800, 426);
@@ -67,7 +66,7 @@ namespace JCNotes
             this.toolStripMenuItemCloseForm.Size = new System.Drawing.Size(24, 20);
             this.toolStripMenuItemCloseForm.Text = "x";
             // 
-            // Form1
+            // NotesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -77,7 +76,7 @@ namespace JCNotes
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Form1";
+            this.Name = "NotesForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "JC Notes";
             this.TopMost = true;
